@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Yosuje\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Yosuje\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AsmdefMultiEdit.-1231088942.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Yosuje\Development\unity\AsmdefMultiEdit" t="IncludeRecursive">
+      <e p="AsmdefMultiEdit.sln" t="IncludeFlat" />
+      <e p="Assets" t="Include">
+        <e p="AsmdefMultiEdit" t="Include">
+          <e p="Editor" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="AsmdefMultiEdit.Editor.asmdef" t="Include" />
+              <e p="AsmdefMultiEditView.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Unity.InternalAPIEditorBridgeDev.001.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>
