@@ -4,6 +4,10 @@
     <e p="C:\Users\Yosuje\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Yosuje\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AsmdefMultiEdit.-1231088942.00" t="ExcludeRecursive" />
     <e p="C:\Users\Yosuje\Development\unity\AsmdefMultiEdit" t="IncludeRecursive">
+      <e p="AsmdefMultiEdit.Example.csproj" t="IncludeRecursive" />
+      <e p="AsmdefMultiEdit.Example.Fuga.csproj" t="IncludeRecursive" />
+      <e p="AsmdefMultiEdit.Example.Hoge.csproj" t="IncludeRecursive" />
+      <e p="AsmdefMultiEdit.Example.Piyo.csproj" t="IncludeRecursive" />
       <e p="AsmdefMultiEdit.sln" t="IncludeFlat" />
       <e p="Assets" t="Include">
         <e p="AsmdefMultiEdit" t="Include">
@@ -11,6 +15,23 @@
             <e p="Scripts" t="Include">
               <e p="AsmdefMultiEdit.Editor.asmdef" t="Include" />
               <e p="AsmdefMultiEditView.cs" t="Include" />
+              <e p="AsmdefMultiEditWindow.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Example" t="Include">
+            <e p="AsmdefMultiEdit.Example.asmdef" t="Include" />
+            <e p="Fuga" t="Include">
+              <e p="AsmdefMultiEdit.Example.Fuga.asmdef" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
+            </e>
+            <e p="Hoge" t="Include">
+              <e p="AsmdefMultiEdit.Example.Hoge.asmdef" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
+            </e>
+            <e p="NewBehaviourScript.cs" t="Include" />
+            <e p="Piyo" t="Include">
+              <e p="AsmdefMultiEdit.Example.Piyo.asmdef" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
             </e>
           </e>
         </e>
