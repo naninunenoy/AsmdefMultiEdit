@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Experimental.AssetImporters;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -38,8 +39,26 @@ namespace AsmdefMultiEdit.Editor
             }
         }
 
-        [MenuItem("Window/Asmdef Multiple Edit/3.Close windows")]
-        public static void CloseWindows()
+        [MenuItem("Window/Asmdef Multiple Edit/3.All apply and close")]
+        public static void Apply()
+        {
+            foreach (var w in windows)
+            {
+                foreach (var editor in w.tracker.activeEditors)
+                {
+                    var assetImporterEditor = editor as AssetImporterEditor;
+
+                    if (assetImporterEditor != null && assetImporterEditor.HasModified())
+                    {
+                        assetImporterEditor.ApplyAndImport();
+                    }
+                }
+                w.Close();
+            }
+            windows.Clear();
+        }
+
+        static void CloseWindows()
         {
             foreach (var w in windows)
             {
