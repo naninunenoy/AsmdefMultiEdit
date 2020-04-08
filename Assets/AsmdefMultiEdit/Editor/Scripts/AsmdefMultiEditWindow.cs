@@ -1,23 +1,51 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.Compilation;
+using UnityEditorInternal;
 using UnityEngine;
 
-namespace AsmdefMultiEdit.Editor{
+namespace AsmdefMultiEdit.Editor
+{
     public class AsmdefMultiEditWindow : EditorWindow
     {
-        [MenuItem("Window/Open Asmdef Multiple Edit Window")]
+        static IList<InspectorWindow> windows = new List<InspectorWindow>();
+
+        [MenuItem("Window/Asmdef Multiple Edit/1.Search asmdef in project")]
+        public static void Search()
+        {
+            var projectBrowser = GetWindow<ProjectBrowser>();
+            projectBrowser.SetSearch("t:AssemblyDefinitionAsset");
+        }
+
+        [MenuItem("Window/Asmdef Multiple Edit/2.Open selected asmdef inspector view")]
         public static void Open()
         {
-            //対象アセットをロード
-            var obj = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>("Assets/AsmdefMultiEdit/Example/Piyo/AsmdefMultiEdit.Example.Piyo.asmdef");
+            var asmdefs = Selection.GetFiltered(typeof(AssemblyDefinitionAsset), SelectionMode.TopLevel);
+            if (!asmdefs.Any())
+            {
+                Debug.Log("no AssemblyDefinitionAsset");
+                return;
+            }
 
-            //存在すればPing
-            if (obj)
-                Selection.objects = new[] { obj };
-            
-            var window = CreateWindow<InspectorWindow>();
+            CloseWindows();
+            foreach (var adf in asmdefs)
+            {
+                Selection.objects = new[] { adf };
+                var w = CreateWindow<InspectorWindow>();
+                // LockすることでInspectorWindowの表示を固定する
+                w.isLocked = true;
+                windows.Add(w);
+            }
+        }
+
+        [MenuItem("Window/Asmdef Multiple Edit/3.Close windows")]
+        public static void CloseWindows()
+        {
+            foreach (var w in windows)
+            {
+                w.Close();
+            }
+            windows.Clear();
         }
     }
 }

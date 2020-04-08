@@ -14,7 +14,6 @@
           <e p="Editor" t="Include">
             <e p="Scripts" t="Include">
               <e p="AsmdefMultiEdit.Editor.asmdef" t="Include" />
-              <e p="AsmdefMultiEditView.cs" t="Include" />
               <e p="AsmdefMultiEditWindow.cs" t="Include" />
             </e>
           </e>
